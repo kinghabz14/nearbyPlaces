@@ -107,11 +107,13 @@ public class MainActivity extends FragmentActivity {
             return;
         }
 
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();//WHAT IS THE TASK OBJECT
+        Task<Location> task = fusedLocationProviderClient.getLastLocation();//returns the most histroical location currently available, null if none are available.
 
-        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {//task is an object which represents an asynchronous operation.
+            //Adds a listener that is called if the Task completes successfully.
+            //Listener called when a Task completes successfully.
             @Override
-            public void onSuccess(Location location) {
+            public void onSuccess(Location location) {//location is an object containing data of a geographical location.
 
                     if(location != null){
 
